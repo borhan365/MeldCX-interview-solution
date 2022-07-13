@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Confetti from 'react-confetti';
 import { useNavigate } from 'react-router-dom';
 import NotifyButton from '../components/NotifyButton';
-import Confetti from 'react-confetti'
 
 function DevicesScreen() {
 
