@@ -39,6 +39,8 @@ function LoginScreen() {
   
     // storing data in localstorage
     localStorage.setItem('userInfo', data)
+
+    // if local storage have a data then redirect to /devices page
     if(data) return navigate('/devices')
   };
 
