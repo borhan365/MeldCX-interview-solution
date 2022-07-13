@@ -53,7 +53,7 @@ function LoginScreen() {
 
           {/* email */}
           <div className='input-group'>
-          <input name='email' placeholder='Email address' {...register('email', { required: "Email is required!" })} />
+          <input name='email' type="email" required={true} placeholder='Email address' {...register('email', { required: "Email is required!" })} />
             <MdEmail />
           </div>
 
