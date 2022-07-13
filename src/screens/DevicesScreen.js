@@ -7,7 +7,6 @@ import NotifyButton from '../components/NotifyButton';
 function DevicesScreen() {
 
   const [devices, setDevices] = useState({})
-  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [celeb, setCeleb] = useState(false)
 
@@ -54,9 +53,7 @@ function DevicesScreen() {
   useEffect(() => {
     const interval = setInterval(() => {
       const fetchDevices = async () => {
-        setLoading(true)
         const {data} = await axios.get('http://35.201.2.209:8000/devices')
-        setLoading(false)
         setDevices(data.devices)
       }
       fetchDevices()
@@ -132,7 +129,7 @@ function DevicesScreen() {
         <div className='device-footer-buttons'>
 
           {/* notify button */}
-          <NotifyButton celeb={celeb} setCeleb={setCeleb} />
+          <NotifyButton setCeleb={setCeleb} />
 
           {/* logout button */}
           <button onClick={logoutHandler} className='btn logout-btn' type='button'>Log out</button>
